@@ -14,7 +14,7 @@ const CountdownSection: React.FC = () => {
 
   useEffect(() => {
     const weddingDate = new Date('2025-09-06T10:00:00+07:00').getTime();
-
+    
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const difference = weddingDate - now;
@@ -37,12 +37,19 @@ const CountdownSection: React.FC = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-cover bg-center text-white py-16 sm:py-20 lg:py-24 xl:py-32"
-      style={{ backgroundImage: `url('/background.jpg')` }}
+      className="relative text-white py-16 sm:py-20 lg:py-24 xl:py-32 min-h-screen flex items-center"
+      style={{ 
+        backgroundImage: `url('/background.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center center", // Lebih spesifik
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "scroll", // Ganti dari fixed ke scroll untuk mobile
+      }}
     >
+      {/* Overlay dengan opacity yang lebih konsisten */}
       <div className="absolute inset-0 bg-black/50" />
-
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
         {/* Judul muncul saat scroll ke sini */}
         <motion.h2
           className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 sm:mb-12 lg:mb-16 tracking-wide"
@@ -54,16 +61,18 @@ const CountdownSection: React.FC = () => {
         </motion.h2>
 
         {/* Countdown */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 mb-8 sm:mb-12 lg:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 mb-8 sm:mb-12 lg:mb-16 w-full max-w-4xl">
           {Object.entries(timeLeft).map(([unit, value], index) => (
             <motion.div
               key={unit}
-              className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20"
+              className="flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.5 + index * 0.2, duration: 0.6 }}
             >
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-cinzel">{value}</span>
+              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-cinzel leading-none">
+                {value}
+              </span>
               <span className="mt-2 sm:mt-3 text-sm sm:text-base lg:text-lg font-medium tracking-wide">
                 {unit === 'days'
                   ? 'Hari'
@@ -79,7 +88,7 @@ const CountdownSection: React.FC = () => {
 
         {/* Tombol */}
         <motion.button
-          className="border-2 border-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm sm:text-base lg:text-lg font-medium tracking-wide transform hover:scale-105"
+          className="border-2 border-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm sm:text-base lg:text-lg font-medium tracking-wide transform hover:scale-105 shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.5, duration: 0.6 }}
