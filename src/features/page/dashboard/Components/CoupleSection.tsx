@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram } from 'lucide-react';
 import { Great_Vibes } from 'next/font/google';
+import Image from 'next/image';
 
 // Import font Great Vibes
 const greatVibes = Great_Vibes({
@@ -68,9 +69,11 @@ const CoupleSection: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto rounded-full overflow-hidden shadow-2xl"
                 >
-                  <img
+                  <Image
                     src="/mel.png"
                     alt="Amel"
+                    width={384}
+                    height={384}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </motion.div>
@@ -83,7 +86,7 @@ const CoupleSection: React.FC = () => {
                 Putri dari Bapak Kurnia Food & Ibu Siti Nurhaliza
               </p>
               <p className="text-gray-500 mb-6 sm:mb-8 max-w-sm lg:max-w-md mx-auto text-sm sm:text-base italic leading-relaxed">
-                "Cinta sejati adalah ketika dua hati bertemu dan menjadi satu dalam kebahagiaan dan kesedihan"
+                &quot;Cinta sejati adalah ketika dua hati bertemu dan menjadi satu dalam kebahagiaan dan kesedihan&quot;
               </p>
               <div className="flex justify-center gap-3 sm:gap-4">
                 <motion.a
@@ -104,9 +107,11 @@ const CoupleSection: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto rounded-full overflow-hidden shadow-2xl"
                 >
-                  <img
+                  <Image
                     src="/dim.jpeg"
                     alt="Dimas"
+                    width={384}
+                    height={384}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </motion.div>
@@ -119,7 +124,7 @@ const CoupleSection: React.FC = () => {
                 Putra dari Bapak Aris Yusanto & Ibu Lilis Triana
               </p>
               <p className="text-gray-500 mb-6 sm:mb-8 max-w-sm lg:max-w-md mx-auto text-sm sm:text-base italic leading-relaxed">
-                "Cinta yang tulus adalah ketika kita rela memberikan yang terbaik untuk orang yang kita sayangi"
+                &quot;Cinta yang tulus adalah ketika kita rela memberikan yang terbaik untuk orang yang kita sayangi&quot;
               </p>
               <div className="flex justify-center gap-3 sm:gap-4">
                 <motion.a

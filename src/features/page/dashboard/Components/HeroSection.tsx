@@ -93,14 +93,14 @@ const HeroSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Translation - Diperkecil */}
+          {/* Translation - Fixed unescaped quotes */}
           <div className="space-y-3 sm:space-y-4 lg:space-y-6">
             <p className="text-white/90 italic text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed px-2 sm:px-4 lg:px-8 max-w-4xl mx-auto">
-              "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+              &quot;Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
               untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu merasa
               tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
               sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
-              tanda-tanda bagi kaum yang berpikir."
+              tanda-tanda bagi kaum yang berpikir.&quot;
             </p>
           </div>
         </motion.div>
