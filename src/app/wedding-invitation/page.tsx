@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 
 // Dynamically import the component with no server-side rendering
-const DashboardNoSSR = dynamic(() => import("@/features/page/dashboard"), {
+const DashboardNoSSR = dynamic(() => import("@/features/page/wedding-invitation"), {
   ssr: false,
 });
 
